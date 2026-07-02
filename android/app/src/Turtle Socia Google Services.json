@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "332389494050",
+    "project_id": "turtle-socia",
+    "storage_bucket": "turtle-socia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332389494050:android:ffe4b539f1d0e6c8a8497b",
+        "android_client_info": {
+          "package_name": "com.example.turtle_social"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWzG1sMcXmmW6cidIECT_CqJcE_j565i8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

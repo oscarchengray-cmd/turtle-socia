@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:turtle_social/ui/SignIn.dart';
-import 'package:turtle_social/ui/home.dart';
+import 'package:turtle_social/ui/LogIn.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class Login extends StatelessWidget {
                 ).createShader(rect);
               },
               child: Text(
-                "Welcome back!",
+                "Hello!",
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
@@ -40,12 +39,12 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 100),
+                  SizedBox(height: 30),
                   Container(
                     width: 350,
                     height: 50,
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
+                      controller: _email,
                       decoration: InputDecoration(
                         hint: Text(
                           "email",
@@ -61,7 +60,7 @@ class Login extends StatelessWidget {
                     width: 350,
                     height: 50,
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
+                      controller: _password,
                       decoration: InputDecoration(
                         hint: Text(
                           "password",
@@ -86,10 +85,10 @@ class Login extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => home()),
+                          MaterialPageRoute(builder: (context) => Login()),
                         );
                       },
-                      child: Text("登入"),
+                      child: Text("註冊"),
                     ),
                   ),
 
@@ -97,7 +96,7 @@ class Login extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignIn()),
+                        MaterialPageRoute(builder: (context) => Login()),
                       );
                     },
                     child: ShaderMask(
@@ -107,7 +106,7 @@ class Login extends StatelessWidget {
                         ).createShader(rect);
                       },
                       child: Text(
-                        "沒有帳號？ 點我註冊！",
+                        "已經有帳號？ 點我登入！",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

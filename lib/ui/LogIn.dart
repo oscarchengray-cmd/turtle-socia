@@ -11,18 +11,18 @@ class Login extends StatelessWidget {
     TextEditingController _password = TextEditingController();
 
     return Scaffold(
-      backgroundColor: Color(0xFF151E2A),
+      backgroundColor: Color(0xFF303F7D),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 100),
+            SizedBox(height: 130),
             ShaderMask(
               shaderCallback: (Rect rect) {
                 return LinearGradient(
-                  colors: <Color>[Color(0xFF0CA8DB), Color(0xFF4C76DB)],
+                  colors: <Color>[Color(0xFFB4B2D5), Color(0xFF4C76DB)],
                 ).createShader(rect);
               },
               child: Text(
@@ -30,33 +30,40 @@ class Login extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
-                  fontSize: 30,
+                  fontSize: 40,
                 ),
               ),
             ),
-
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 100),
-                  Container(
-                    width: 350,
-                    height: 50,
-                    child: TextField(
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        hint: Text(
-                          "email",
-                          style: TextStyle(color: Colors.white.withAlpha(100)),
-                        ),
-                        border: OutlineInputBorder(),
+                  SizedBox(height: 80),
+                  TextField(
+                    controller: _email,
+                    decoration: InputDecoration(
+                      hintText: "請輸入您的email",
+                      prefixIcon: Icon(Icons.person),
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.clear),
+                        onPressed: () => _email.clear(),
                       ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey,width: 2),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white, width: 2),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      filled: true,
+                      fillColor: Color(0xFFB4B2D5),
                     ),
                   ),
 
                   SizedBox(height: 30),
+
                   Container(
                     width: 350,
                     height: 50,
@@ -67,7 +74,7 @@ class Login extends StatelessWidget {
                           "password",
                           style: TextStyle(color: Colors.white.withAlpha(100)),
                         ),
-                        border: OutlineInputBorder()
+                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
@@ -95,10 +102,7 @@ class Login extends StatelessWidget {
 
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignIn()),
-                      );
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn()),);
                     },
                     child: ShaderMask(
                       shaderCallback: (Rect rect) {

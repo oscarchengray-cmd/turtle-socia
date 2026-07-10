@@ -10,7 +10,7 @@ class SignIn extends StatelessWidget {
     TextEditingController _password = TextEditingController();
 
     return Scaffold(
-      backgroundColor: Color(0xFF151E2A),
+      backgroundColor: Color(0xFF303F7D),
       body: Padding(
         padding: const EdgeInsets.only(left: 20),
         child: Column(
